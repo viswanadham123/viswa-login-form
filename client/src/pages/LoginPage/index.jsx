@@ -56,12 +56,12 @@ function LoginPage() {
               Name
             </Text>
             <input
-            required
+              required
               placeholder="name"
               type="text"
               value={loginUsername}
               onChange={(e) => setLoginUsername(e.target.value)}
-              className="min-w-[653px] md:min-w-full p-4"
+              className="min-w-[653px] md:min-w-full p-4 rounded-[6px]"
             />
           </div>
 
@@ -73,12 +73,12 @@ function LoginPage() {
               Password
             </Text>
             <input
-            required
+              required
               placeholder="password"
               type="password"
               value={loginPassword}
               onChange={(e) => setLoginPassword(e.target.value)}
-              className=" min-w-[653px] md:min-w-[100%] p-4 "
+              className=" min-w-[653px] md:min-w-[100%] p-4 rounded-[6px]"
             />
           </div>
           <div className="flex flex-col gap-2.5 items-start justify-start mt-[31px] w-full">

@@ -24,7 +24,7 @@ function SigninPage() {
         navigate("/login");
       } catch (error) {
         console.error("Error signing up:", error.message);
-        setSignupError("User already exist")
+        setSignupError(error.message)
         setErrorMsg(true)
       }
     }
@@ -63,7 +63,7 @@ function SigninPage() {
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className=" min-w-[653px] md:min-w-[100%] p-4"
+                  className=" min-w-[653px] md:min-w-[100%] p-4 rounded-[6px]"
                 />
                 <div className="flex flex-col gap-[11px] items-start justify-start mt-[30px] w-full">
                   <Text
@@ -78,7 +78,7 @@ function SigninPage() {
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className=" min-w-[653px] md:min-w-[100%] p-4"
+                    className=" min-w-[653px] md:min-w-[100%] p-4 rounded-[6px]"
                   />
                 {passwordError&&  <p  style={{ color: "red" }}>password must be 8 charecters</p>} 
                 </div>
