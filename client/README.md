@@ -86,7 +86,7 @@ Builds the app for production to the `build` folder.<br>
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time.
 
-## Installing a Dependency
+## Installing a Dependencydd
 
 You can install any dependencies (for example, React Router) with `npm`:
 
@@ -100,4 +100,21 @@ Alternatively you may use `yarn`:
 yarn add react-router
 ```
 
-## License
+## Languages & tools
+
+- [Node](https://nodejs.org/en/)
+
+- [Express](https://expressjs.com/)
+
+- [MongoDB](https://www.mongodb.com/)
+
+- [React](https://reactjs.org/)
+
+- [Webpack](https://webpack.js.org/)
+- 
+### Prerequisites
+
+Before running the application, make sure you have the following installed:
+
+ -[Node.js] (https://nodejs.org/en/)
+- [MongoDB]  (https://www.mongodb.com/)
