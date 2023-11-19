@@ -13,7 +13,7 @@ function LoginPage() {
 
   const handleLogin = async () => {
     const userDetails = { loginUsername, loginPassword };
-    const url = "http://localhost:5000/login";
+    const url = "http://viswanadham-andala1:5000/login";
 
     try {
       const response = await axios.post(url, userDetails);

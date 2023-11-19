@@ -18,7 +18,7 @@ function SigninPage() {
       setError(true)
     }else{
       try {
-        const response = await axios.post("http://localhost:5000/signup", {
+        const response = await axios.post("http://viswanadham-andala1:5000/signup", {
           username,
           password,
         });
