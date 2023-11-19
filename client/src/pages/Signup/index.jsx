@@ -2,7 +2,9 @@ import axios from "axios";
 import { Button, Img, Text } from "components";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import { eye } from "react-icons-kit/feather/eye";
+import { eyeOff } from "react-icons-kit/feather/eyeOff";
+import { Icon } from "react-icons-kit"; 
 function SigninPage() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
@@ -29,6 +31,17 @@ function SigninPage() {
       }
     }
   
+  };
+  const [type, setType] = useState("password");
+  const [icon, setIcon] = useState(eyeOff);
+  const changeVisibility = () => {
+    if (type === "password") {
+      setIcon(eye);
+      setType("text");
+    } else {
+      setIcon(eyeOff);
+      setType("password");
+    }
   };
 
   return (
@@ -72,14 +85,28 @@ function SigninPage() {
                   >
                     Password
                   </Text>
-                  <input
-                  required
-                    placeholder="password"
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className=" min-w-[653px] md:min-w-[100%] p-4 rounded-[6px]"
-                  />
+                  
+             <div className="password4 w-full passboarder2 pass flex flex-row justify-start items-center w-[94%]">
+                            <div className=" w-[90%]">
+                              <input
+                                required
+                               onChange={(e) => setPassword(e.target.value)}
+                                type={type}
+                                name="preferenceCounter_Eight"
+                                placeholder="password"
+                                className=" min-w-[653px] md:min-w-[100%] p-4 rounded-[6px] leading-[normal]  placeholder:text-blue_gray-900  text-[15px] text-left "
+                                wrapClassName="!border-colors !rounded-[12px]"
+                              />
+                            </div>
+                             <div className=" flex flex-row justify-end items-end !border-colors !rounded-[12px] ">
+                              <span
+                               
+                                onClick={changeVisibility}
+                              >
+                                <Icon icon={icon} size={17} />
+                              </span>
+                            </div> 
+                          </div>
                 {passwordError&&  <p  style={{ color: "red" }}>password must be 8 charecters</p>} 
                 </div>
               </div>

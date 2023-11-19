@@ -1,8 +1,10 @@
 import axios from "axios";
-import { Button, Img, Text } from "components";
+import { Button, Img,Input, Text } from "components";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import { eye } from "react-icons-kit/feather/eye";
+import { eyeOff } from "react-icons-kit/feather/eyeOff";
+import { Icon } from "react-icons-kit";
 function LoginPage() {
   const [loginUsername, setLoginUsername] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -31,6 +33,19 @@ function LoginPage() {
       }
     }
   };
+
+  const [type, setType] = useState("password");
+  const [icon, setIcon] = useState(eyeOff);
+  const changeVisibility = () => {
+    if (type === "password") {
+      setIcon(eye);
+      setType("text");
+    } else {
+      setIcon(eyeOff);
+      setType("password");
+    }
+  };
+
 
   return (
     <div className="bg-gradient flex sm:flex-col md:flex-col flex-row font-poppins sm:gap-10 md:gap-10 gap-[140px] items-center mx-auto p-[99px] md:px-10 sm:px-5 w-full">
@@ -72,14 +87,28 @@ function LoginPage() {
             >
               Password
             </Text>
-            <input
-              required
-              placeholder="password"
-              type="password"
-              value={loginPassword}
-              onChange={(e) => setLoginPassword(e.target.value)}
-              className=" min-w-[653px] md:min-w-[100%] p-4 rounded-[6px]"
-            />
+         
+             <div className="password4 w-full passboarder2 pass flex flex-row justify-start items-center w-[94%]">
+                            <div className=" w-[90%]">
+                              <input
+                                required
+                               onChange={(e) => setLoginPassword(e.target.value)}
+                                type={type}
+                                name="preferenceCounter_Eight"
+                                placeholder="password"
+                                className=" min-w-[653px] md:min-w-[100%] p-4 rounded-[6px] leading-[normal]  placeholder:text-blue_gray-900  text-[15px] text-left "
+                                wrapClassName="!border-colors !rounded-[12px]"
+                              />
+                            </div>
+                             <div className=" flex flex-row justify-end items-end !border-colors !rounded-[12px] ">
+                              <span
+                               
+                                onClick={changeVisibility}
+                              >
+                                <Icon icon={icon} size={17} />
+                              </span>
+                            </div> 
+                          </div>
           </div>
           <div className="flex flex-col gap-2.5 items-start justify-start mt-[31px] w-full">
             <Button
